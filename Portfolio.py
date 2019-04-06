@@ -31,16 +31,14 @@ weights = np.array(x)
 
 annual_returns = returns.mean() * 250
 np.dot(annual_returns, weights)
-portfolio=str(round(np.dot(annual_returns, weights),2)*100)+'%'
+portfolio=str(round(np.dot(annual_returns, weights),4)*100)+'%'
 
 sec_returns = np.log(stockdata / stockdata.shift(1))
 
 pfolio_var = np.dot(weights.T, np.dot(sec_returns.cov() * 250, weights))
+pfolio_risk=str(round(pfolio_var ** 0.5,4)*100)+'%'
 
-pfolio_risk=str(round(pfolio_var ** 0.5,2)*100)+'%'
-
-
-print ('The projected annual eturn of the portfolio is: '+ portfolio)
+print ('The projected annual return of the portfolio is: '+ portfolio)
 print ('The portfolio has a volatility rate of: '+pfolio_risk)
 
 
