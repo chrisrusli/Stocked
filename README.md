@@ -1,4 +1,4 @@
-# Stocked
+# Stock for Newbz
 Code to calculate the return and risk of an investment portfolio
 
 The Files found here are small projects that uses Python for Finance
